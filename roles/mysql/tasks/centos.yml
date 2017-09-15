@@ -211,7 +211,7 @@
 
 - name: display host_var
   debug:
-    msg: "  {{ hostvars[groups['mysql'][0]]['repl_local_address'] }}   ------ {{ hostvars[groups['mysql']] }}"  
+    msg: "  {{ hostvars[groups['mysql'][0]]['repl_local_address'] }}   "  
   tags: [mysql]
 
 
