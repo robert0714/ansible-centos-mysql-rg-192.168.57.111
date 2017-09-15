@@ -210,6 +210,11 @@
   shell: mysql -uroot  -Bse  "CHANGE MASTER TO MASTER_USER=\"{{ mysql_rep_user }}\", MASTER_PASSWORD=\"{{ mysql_rep_pass }}\"  FOR CHANNEL \"group_replication_recovery\";"
   tags: [mysql]
 
+- name: display host_var
+  debug:
+    msg: "  {{ hostvars[groups['mysql'][0]]['repl_local_address'].stdout }} "  
+  tags: [mysql]
+
 
 - name: Replication-group -  Master start in  group_replication  
   shell: mysql -uroot   -Bse "SET GLOBAL group_replication_bootstrap_group=ON; START GROUP_REPLICATION; SET GLOBAL group_replication_bootstrap_group=OFF; " 

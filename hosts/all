@@ -2,9 +2,9 @@
 192.168.57.11[1:4]  
 
 [mysql]
-192.168.57.111  master=true repl_server_id=10  repl_local_address=10.100.194.201:24901
-192.168.57.112  repl_server_id=20 repl_local_address=10.100.194.202:24902
-192.168.57.113  repl_server_id=30 repl_local_address=10.100.194.203:24903
+192.168.57.111  master=true repl_server_id=10  repl_local_address={{ host_ip }}:24901
+192.168.57.112  repl_server_id=20 repl_local_address={{ host_ip }}:24902
+192.168.57.113  repl_server_id=30 repl_local_address={{ host_ip }}:24903
 
 [proxySQL]
 192.168.57.114
