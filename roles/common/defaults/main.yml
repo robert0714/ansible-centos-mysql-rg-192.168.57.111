@@ -1,0 +1,16 @@
+hosts: [
+  { host_ip: "192.168.57.111", host_name: "mysql-01"},
+  { host_ip: "192.168.57.112", host_name: "mysql-02"},
+  { host_ip: "192.168.57.113", host_name: "mysql-03"},
+  { host_ip: "192.168.57.114", host_name: "app"}
+]
+
+obsolete_services:
+  - puppet
+  - chef-client
+
+centos_files: [
+     { src: "centos.sshd_config", dest: "/etc/ssh/sshd_config" },
+  ]
+
+# root_pass: vagrant
