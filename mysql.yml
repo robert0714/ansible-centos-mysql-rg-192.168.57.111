@@ -1,5 +1,5 @@
 - hosts: mysql
-  remote_user: vagrant
+  remote_user: root
   serial: 1
   roles:
     - common
