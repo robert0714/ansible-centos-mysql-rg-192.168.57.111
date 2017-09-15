@@ -246,6 +246,7 @@
      - ::1
      - localhost
      - '%'
+  ignore_errors: yes
   tags: [mysql]
  
 
