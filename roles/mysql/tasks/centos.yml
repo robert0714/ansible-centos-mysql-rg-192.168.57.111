@@ -167,8 +167,7 @@
 
 
 - name: replication group - Flush
-  shell: mysql --defaults-file=/root/.my.cnf -e "FLUSH PRIVILEGES";
-  shell: mysql --defaults-file=/root/.my.cnf -e "FLUSH TABLES WITH READ LOCK";
+  shell: mysql --defaults-file=/root/.my.cnf -e "FLUSH PRIVILEGES";  mysql --defaults-file=/root/.my.cnf -e "FLUSH TABLES WITH READ LOCK";
   when: master is defined
   tags: [mysql]
 
@@ -212,7 +211,7 @@
 
 - name: display host_var
   debug:
-    msg: "  {{ hostvars[groups['mysql'][0]]['repl_local_address'].stdout }} "  
+    msg: "  {{ hostvars[groups['mysql'][0]]['repl_local_address'] }}   ------ {{ hostvars[groups['mysql']] }}"  
   tags: [mysql]
 
 
